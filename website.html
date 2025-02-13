@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 3em;
+            color: #e91e63;
+            margin-bottom: 20px;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            background-color: #f28d99;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #d97f8d;
+        }
+        .gif-container {
+            display: none;
+        }
+        .response {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #e91e63;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="question">
+        <h1>Will you be my Valentine?</h1>
+    </div>
+    
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn" onmouseover="showGif()" onmouseout="hideGif()">No</button>
+    
+    <div class="gif-container" id="gifContainer">
+        <img src="https://media.tenor.com/sbfBfp3FeY8AAAAj/oia-uia.gif" alt="Gif" width="200">
+    </div>
+    
+    <div id="message"></div>
+</div>
+
+<script>
+    // When "Yes" is clicked, display "Yaayyy"
+    document.getElementById('yesBtn').addEventListener('click', function() {
+        document.getElementById('message').innerText = "Yay! You're my Valentine! 💖";
+    });
+
+    // Show the gif when hovering over "No"
+    function showGif() {
+        document.getElementById('noBtn').style.display = 'none';  // Hide the "No" button
+        document.getElementById('gifContainer').style.display = 'block';  // Show the gif
+    }
+
+    // Hide the gif and show "No" button when mouse leaves
+    function hideGif() {
+        document.getElementById('gifContainer').style.display = 'none';  // Hide the gif
+        document.getElementById('noBtn').style.display = 'inline-block';  // Show the "No" button again
+    }
+</script>
+
+</body>
+</html>
+
+
